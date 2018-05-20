@@ -1,11 +1,17 @@
 console.log('Starting app.js');
 
 const fs = require('fs');
-const os = require('os');
+const _ = require('lodash');
+
 const notes = require('./notes.js');
 
-console.log(notes.add(2,5))
+var command = process.argv[2];
+console.log('Command: ', command);
 
-// var user = os.userInfo();
-//
-// fs.appendFileSync('greetings.txt', `Hello ${user.username}!`);
+if (command === 'add') {
+  console.log('Adding new note')
+} else if (command === 'list') {
+  conosle.log('Listing all notes')
+} else {
+  console.log('Command not recognized')
+}
